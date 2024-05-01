@@ -1,0 +1,18 @@
+:root {
+    font-size: 62.5%;
+  
+    --title-size: 4rem;
+    --subtitle-size: 2rem;
+    --text-size: 1.2rem;
+    --light-color: #fff;
+    --dark-color: #2e183b;
+    --secondary-color: #f25725;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
