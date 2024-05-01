@@ -15,4 +15,376 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
   }
+
+  /* ======== Header ======== */
   
+  
+  header {
+    background-color: var(--dark-color);
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    clip-path: polygon(0% 0%, 0% 70%, 100% 100%, 100% 0%);
+
+  }
+
+  .header-content {
+    position: relative;
+    bottom: 40px;
+}
+  
+  .header-content h2 {
+    font-size: var(--subtitle-size);
+    text-align: center;
+  }
+  
+  .header-content h1 {
+    font-size: var(--title-size);
+    text-align: center;
+  }
+  
+  .header-content p {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .nav {
+    position: relative;
+    bottom: 20px;
+}
+  
+  .nav-list {
+    list-style: none;
+    margin-top: 3rem;  
+    display: flex;
+  }
+  
+  .nav-list li {
+    margin: 0 2rem;
+    font-size: 1.4rem;
+    width: 17rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 0.4rem;
+    background: linear-gradient(45deg, var(--secondary-color), #ffad03);
+    transition: all 0.2s;
+  }
+  
+  .nav-list li:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--secondary-color));
+    cursor: pointer;
+  }
+
+  .nav-list li a {
+    color: var(--light-color);
+    text-decoration: none;
+  }
+
+  /* ======== Main ======== */
+
+
+  main {
+    width: 100%;
+    color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* ======== Form ======== */
+  
+
+  .help-form {
+    margin: auto;
+    margin-top: 2rem;
+    width: 110rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    margin-bottom: 8rem;
+  }
+  
+  .help-form .text {
+    margin-right: 5rem;
+  }
+
+  .help-form .text p {
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .help-form .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+  }
+  
+  .help-form .text h2 {
+    margin-bottom: 3rem;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: normal;
+  }
+  
+  
+  .form-name,
+  .form-email,
+  .form-cpf {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .form-name {
+    margin-top: 1.4rem;
+  }
+  
+  .form-name label,
+  .form-email label,
+  .form-cpf label,
+  .form-genre {
+    font-size: var(--text-size);
+    margin-bottom: 0.7rem;
+  }
+  
+  .form-name input,
+  .form-email input,
+  .form-cpf input {
+    width: 34rem;
+    height: 3rem;
+    padding-left: 1rem;
+    outline: none;
+  }
+  
+  .form-genre {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-genre input {
+    margin-right: 0.3rem;
+  }
+  
+  .help-form .form-button button {
+    width: 34rem;
+    height: 3.9rem;
+    border: none;
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.3rem;
+    transition: all 0.3s;
+    border-radius: 4px;
+  }
+  
+  .form-button button:hover{
+    background-color: var(--secondary-color);
+    cursor: pointer;
+  }
+  
+  #female {
+    margin-left: 2rem;
+  }
+  
+
+/* ======== Line ======== */
+
+.div-line {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 4.4rem;
+}
+
+.line {
+  width: 47rem;
+  height: .1rem;
+  background-color: #121212;
+}
+
+.div-line h2 {
+  margin: 0 1rem;
+}
+
+.div-line h2 {
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+} 
+
+
+/* ======== Products cards ======== */
+
+.products-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 30rem);
+  justify-content: center;
+
+  margin-bottom: 6rem;
+}
+
+  .card {
+    width: 20rem;
+    height: 35rem;
+    position: relative;
+
+    margin: 4rem;
+    cursor: pointer;
+  }
+  
+  .card-image {
+    width: 20rem;
+    height: 15rem;
+  }
+  
+  .product-name {
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 16rem;
+    left: 0rem;
+  }
+  
+  .product-description {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 11rem;
+    left: 0rem;
+  }
+  
+  .old-price {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 8rem;
+    left: 0rem;
+  }
+  
+  .price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 5.7rem;
+    left: 0rem;
+  }
+  
+  .installments {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 0rem;
+  }
+  
+  .buy-button {
+    width: 20rem;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    border-radius: .3rem;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transition: all .3s;
+  }
+
+  .buy-button:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+  }
+
+  .more-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .more-products-button {
+    border: none;
+    height: 3.9rem;
+    width: 26rem;
+    border-radius: .4rem;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    transition: .3s all;
+
+    margin-bottom: 8rem;
+  }
+
+  .more-products-button:hover, .send-now:hover {
+    background-color: var(--dark-color);
+    cursor: pointer;
+  }
+
+
+  /* ======== Share ======== */
+
+  .fill-text {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+
+  .friend-name {
+    margin-right: 3rem;
+    margin: 0 3rem 0 0;
+  }
+
+  .friend-email {
+    margin: 0;
+  }
+
+  .share-friend .form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .send-now {
+    border: none;
+    height: 3.9rem;
+    width: 26rem;
+    border-radius: .4rem;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    transition: .3s all;
+    margin-bottom: 8rem;
+  }
+
+
+  /* ======== Footer ======== */
+
+  .footer {
+    height: 29rem;
+    width: 100%;
+    background-color: var(--dark-color);
+    clip-path: polygon(0% 30%, 0% 100%, 100% 100%, 100% 0%);
+    display: grid;
+    align-content: center;
+    color: white;
+    text-align: center;
+    line-height: 170%;
+    font-size: 1.2rem;
+
+}
+
+.footer span {
+  position: relative;
+  top: 100%;
+}
