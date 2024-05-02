@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail - Linx Inpulse</title>
+</head>
+
+<body style="max-width: 600px; margin: auto; font-size: 10px; font-family: 'Roboto', sans-serif;">
+
+    <header style="background-color: #2e183b; height: 198px; color: #fff; clip-path: polygon(0% 0%, 0% 80%, 100% 100%, 100% 0%); text-align: center; margin-bottom: 20px;">
+        <h2 style="font-size: 20px;">Uma seleção de produtos</h2>
+        <h1 style="font-size: 40px;">Especial para você</h1>
+        <p style="font-size: 14px; margin-top: 20px;">Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</p>
+    </header>
+
+    <main style="width: 100%; color: #121212; display: flex; flex-direction: column; justify-content: space-between;">
+
+        <section class="message" style="max-width: 90%; margin: auto;">
+            <div class="messageDiv">
+                <h2 class="hello" style="font-size: 20px;">Olá, Fulano</h2>
+                <p class="offer-message" style="font-size: 14px;">Fizemos uma lista especial de produtos apenas para você. Isso mesmo: nesta lista temos só produtos que você pode gostar. Seu amigo Ciclano lhe recomendou essa lista especial. Olha só:</p>
+            </div>
+        </section>
+
+        <section class="products-cards" style="margin: auto; overflow: hidden; display: flex; justify-content: space-between;">
+
+        </section>
+
+        <div class="more-products" style="display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 20px;">
+            <button class="more" style="border: none; height: 40px; width: 260px; background-color: #f25725; color: #fff; transition: .3s all;">Tem muito mais aqui. Vem ver!</button>
+        </div>
+
+    </main>
+
+    <footer class="footer" style="height: 290px; width: 100%; background-color: #2e183b; clip-path: polygon(0% 30%, 0% 100%, 100% 100%, 100% 0%); color: white; text-align: center; line-height: 170%; font-size: 12px;">
+        <span>Testando suas habilidades em HTML, CSS e JS. <br /> Linx Impulse <br />2019</span>
+    </footer>
+
+    <script>
+        let section = document.querySelector('.products-cards');
+        let moreProducts = document.querySelector('.more');
+        let currentPage = 1;
+        let productsLoaded = 0;
+
+        const loadProducts = () => {
+            const url = `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${currentPage}`;
+            fetch(url)
+                .then((res) => res.json())
+                .then((json) => {
+                    const products = json.products.slice(0, 2);
+                    productInfo(products);
+                    productsLoaded += products.length;
+                });
+            currentPage++;
+        };
+
+        const productInfo = (info) => {
+            info.forEach((product) => {
+                const div = document.createElement('div');
+                div.className = 'card';
+
+                const image = document.createElement('img');
+                image.className = 'card-image';
+                image.src = `https:${product.image}`;
+                image.style.width = '100%';
+                image.style.height = 'auto';
+                div.appendChild(image);
+
+                const productName = document.createElement('p');
+                productName.className = 'product-name';
+                productName.textContent = product.name;
+                productName.style.fontSize = '14px';
+                productName.style.marginTop = '10px';
+                div.appendChild(productName);
+
+                const productDescription = document.createElement('p');
+                productDescription.className = 'product-description';
+                productDescription.textContent = product.description;
+                productDescription.style.fontSize = '12px';
+                div.appendChild(productDescription);
+
+                const oldPrice = document.createElement('p');
+                oldPrice.className = 'old-price';
+                oldPrice.textContent = `De: R$${product.oldPrice.toFixed(2)}`;
+                oldPrice.style.fontSize = '12px';
+                div.appendChild(oldPrice);
+
+                const price = document.createElement('p');
+                price.className = 'price';
+                price.textContent = `Por: R$${product.price.toFixed(2)}`;
+                price.style.fontSize = '16px';
+                price.style.fontWeight = 'bold';
+                div.appendChild(price);
+
+                const installments = document.createElement('p');
+                installments.className = 'installments';
+                installments.textContent = `ou ${product.installments.count}x de R$${product.installments.value.toFixed(2)}`;
+                installments.style.fontSize = '12px';
+                div.appendChild(installments);
+
+                const buyButton = document.createElement('button');
+                buyButton.className = 'buy-button';
+                buyButton.textContent = 'Comprar';
+                buyButton.style.width = '100%';
+                buyButton.style.height = '30px';
+                buyButton.style.backgroundColor = '#2e183b';
+                buyButton.style.color = '#fff';
+                buyButton.style.border = 'none';
+                buyButton.style.cursor = 'pointer';
+                div.appendChild(buyButton);
+
+                section.appendChild(div);
+            });
+        };
+
+        moreProducts.addEventListener('click', () => {
+            if (productsLoaded < 8) {
+                loadProducts();
+            } else {
+                moreProducts.textContent = 'Não há mais produtos';
+                moreProducts.style.backgroundColor = '#ccc';
+                moreProducts.style.cursor = 'default';
+                moreProducts.disabled = true;
+            }
+        });
+
+        loadProducts();
+    </script>
+
+</body>
+
+</html>
