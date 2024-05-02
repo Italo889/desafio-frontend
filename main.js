@@ -3,6 +3,15 @@ const moreProductsButton = document.querySelector('.more-products-button');
 const newsletterForm = document.querySelector('.newsletter-form');
 
 let currentPage = 1;
+let productsPerPage = 8;
+
+const setProductsPerPage = () => {
+    if (window.innerWidth < 600) {
+        productsPerPage = 4;
+    } else {
+        productsPerPage = 8;
+    }
+};
 
 const fetchProducts = (page) => {
     fetch(`https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${page}`)
@@ -17,7 +26,9 @@ const fetchProducts = (page) => {
             }
         });
 };
+
 const displayProducts = (products) => {
+    setProductsPerPage();
 
     products.slice(0, productsPerPage).forEach((product) => {
         const card = document.createElement('div');
@@ -57,3 +68,4 @@ newsletterForm.addEventListener('submit', (event) => {
     }
 });
 
+window.addEventListener('resize', setProductsPerPage);
