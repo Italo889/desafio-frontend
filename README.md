@@ -16,7 +16,7 @@ O desafio consiste no desenvolvimento do layout de uma landing page com uma grad
 
 ### Responsividade
 
-- **Responsividade em mais tamanhos de tela**: O projeto atualmente não suporta todos os tamanhos de tela. A criação de um design responsivo que se adapta a uma variedade de tamanhos de tela melhoraria a acessibilidade e a usabilidade do projeto.
+- **Responsividade em mais tamanhos de tela**: O projeto atualmente não suporta todos os tamanhos de tela, foi desenvolvido com o tamanho de tela do Iphone SE. A criação de um design responsivo que se adapta a uma variedade de tamanhos de tela melhoraria a acessibilidade e a usabilidade do projeto.
 
 ### Prevenção de Quebras de Layout
 
@@ -39,7 +39,7 @@ O desafio consiste no desenvolvimento do layout de uma landing page com uma grad
 ## Como usar
 
 Algumas formas de testar são:
-- Acecessando o [Link do live preview](https://)
+- Acecessando o [Link do live preview](https://desafiobold.netlify.app/)
 - Baixando o ZIP e abrindo com qualquer navegador
 - Clonando via terminal
 - No terminal dentro do diretório que deseja baixar o projeto utilize: ``` git clone https://github.com/Italo889/desafio-frontend.git ```
